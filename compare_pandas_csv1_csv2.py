@@ -23,9 +23,10 @@ matching_values = column1_file1[column1_file1.isin(column3_file2)]
 if not missing_values.empty:
     print("Values in column {} of {} not found in column {} of {}:".format(sys.argv[2],sys.argv[1],sys.argv[4],sys.argv[3]))
     print(missing_values.to_string(index=False))
+    
 else:
     print("All values in column {} of {} are found in column {} of {}.".format(sys.argv[2],sys.argv[1],sys.argv[4],sys.argv[3]))
 
 # write the output to a new csv
-missing_values.to_csv(r'./missing_in_result_comparing_target.csv', sep='\t', encoding='utf-8')
-matching_values.to_csv(r'./matching_in_result_comparing_target.csv', sep='\t', encoding='utf-8')
+missing_values.to_csv(r'./missing_in_result_comparing_target.csv', sep='\t', encoding='utf-8',index=False)
+matching_values.to_csv(r'./matching_in_result_comparing_target.csv', sep='\t', encoding='utf-8',index=False)
