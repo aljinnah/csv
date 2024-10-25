@@ -2,7 +2,7 @@
 This repository contains python program to deal with CSV files. 
 Comparing csv files using compare_pandas_csv1_csv2.py required pandas installed in workstation.
 
-pip install pandasa
+pip install pandas
 
 compare_pandas_csv1_csv2.py require four commandline argument to compare two csv files.
 Lets assume we have a target.csv file with information in column 0 which need to be compared with a result.csv file with information in column 2.
