@@ -2,10 +2,10 @@
 import pandas as pd
 import sys
 
-print(sys.argv[1])
-print(sys.argv[2])
-print(sys.argv[3])
-print(sys.argv[4])
+#print(sys.argv[1])
+#print(sys.argv[2])
+#print(sys.argv[3])
+#print(sys.argv[4])
 
 # Load the CSV files
 file1 = pd.read_csv(sys.argv[1])
@@ -21,10 +21,10 @@ matching_values = column1_file1[column1_file1.isin(column3_file2)]
 
 # Print the missing values
 if not missing_values.empty:
-    print("Values in column 0 of file1 not found in column 2 of file2:")
+    print("Values in column {} of {} not found in column {} of {}:".format(sys.argv[2],sys.argv[1],sys.argv[4],sys.argv[3]))
     print(missing_values.to_string(index=False))
 else:
-    print("All values in column 1 of file1 are found in column 3 of file2.")
+    print("All values in column {} of {} are found in column {} of {}.".format(sys.argv[2],sys.argv[1],sys.argv[4],sys.argv[3]))
 
 # write the output to a new csv
 missing_values.to_csv(r'./missing_in_result_comparing_target.csv', sep='\t', encoding='utf-8')
