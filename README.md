@@ -9,6 +9,7 @@ Lets assume we have a target.csv file with information in column 0 which need to
 Then the program should run in the approach outlined below:
 
  compare_pandas_csv1_csv2.py target.csv 0 result.csv 2
+#Note: we have to use (same) headers in both target and result CSV, otherwise there might be inconsistency output since pandas will treat first value in a column as column header.  
 
 Running this command will produce two output files.
 
