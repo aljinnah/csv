@@ -8,8 +8,10 @@ import sys
 #print(sys.argv[4])
 
 # Load the CSV files
-file1 = pd.read_csv(sys.argv[1])
-file2 = pd.read_csv(sys.argv[3])
+#file1 = pd.read_csv(sys.argv[1])
+file1 = pd.read_csv(sys.argv[1],encoding='windows-1252') #  File "<frozen codecs>", line 322, in decode UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa0 in position 766: invalid start byte
+file2 = pd.read_csv(sys.argv[3],encoding='windows-1252')
+#file2 = pd.read_csv(sys.argv[3])
 
 # Extract the relevant columns
 column1_file1 = file1.iloc[:, int(sys.argv[2])].str.upper()  # Column 1 from file1
