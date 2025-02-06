@@ -31,8 +31,11 @@ def build_dict_from_db2_file(file_path):
 
     return result_dict
 
+def main():
+    if not len(sys.argv) == 2 :
+        print("Missing or inappropriate argument, exiting ...")
+        sys.exit(1)
 
-if __name__== "__main__":
     file_path = sys.argv[1]  # Add file path as argument or Replace with hardcoded file path
     my_dict = build_dict_from_db2_file(file_path)
     print("Available column or keys from the data file:")
@@ -62,3 +65,6 @@ if __name__== "__main__":
         # Write the data rows (values of the dictionary)
         writer.writerows(zip(*my_dict.values()))
         print("Done, output file db2dictoutput.csv generated in current directory")
+
+if __name__== "__main__":
+    main()
