@@ -7,7 +7,6 @@ def build_dict_from_db2_file(file_path):
     it returns a dict object which can be converted to csv with some tweaks.
     
     Author: Mohammad Abu Al Jinnah
-
     '''
     result_dict = {}
     with open(file_path, 'r') as file:
@@ -49,8 +48,7 @@ def main():
             my_dict[k].append("na")
 
     #print(my_dict)     # comment if dict is two big
-
-    # Specify the CSV file name
+    # Specify the output CSV file name
     csv_file = "db2dictoutput.csv"
 
     # Open the CSV file in write mode
@@ -58,10 +56,8 @@ def main():
         # Create a CSV writer object
         writer = csv.writer(file)
         print("\nExporting datafile to CSV ...")
-
         # Write the header row (keys of the dictionary)
         writer.writerow(my_dict.keys())
-
         # Write the data rows (values of the dictionary)
         writer.writerows(zip(*my_dict.values()))
         print("Done, output file db2dictoutput.csv generated in current directory")
