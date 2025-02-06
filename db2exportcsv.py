@@ -11,7 +11,7 @@ def build_dict_from_db2_file(file_path):
     '''
     result_dict = {}
     with open(file_path, 'r') as file:
-        iter=0 
+        iter=0  # assuming the key found first as delimeter for row identification and before any row written, variable iter is 0.
         for line in file:
             line = line.strip()  # Remove leading/trailing whitespace
             if line and '=' in line: #splitting a line with delimeter "="
@@ -19,7 +19,7 @@ def build_dict_from_db2_file(file_path):
                 key=keyy.strip()     #stripping leading and trailing whitespace rom key
                 value=val.lstrip().split(" ")[0]  #stripping leading whitespace and the splitting based on delimeter " ", taking the first part as value 
 
-                if key in result_dict.keys():     # if key is already in the dict then appening value, in correct rows as indicated by iter value. 
+                if key in result_dict.keys():     # if key is already in the dict then appending value, in correct rows as indicated by iter value. 
                     while len(result_dict[key]) < iter:
                         result_dict[key].append("na")                        
                     result_dict[key].append(value)
