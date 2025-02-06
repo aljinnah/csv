@@ -45,7 +45,7 @@ if __name__== "__main__":
         while len(my_dict[k])<padl:
             my_dict[k].append("na")
 
-    print(my_dict)     # comment if dict is two big
+    #print(my_dict)     # comment if dict is two big
 
     # Specify the CSV file name
     csv_file = "db2dictoutput.csv"
